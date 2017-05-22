@@ -44,7 +44,7 @@ open class ToastView: UIView {
   }
 
   /// The inset of the text label.
-  open dynamic var textInsets = UIEdgeInsets(top: 6, left: 10, bottom: 6, right: 10)
+  open dynamic var textInsets = UIEdgeInsets(top: 16, left: 10, bottom: 16, right: 10)
 
   /// The color of the text label's text.
   open dynamic var textColor: UIColor? {
@@ -134,15 +134,15 @@ open class ToastView: UIView {
     )
     let textLabelSize = self.textLabel.sizeThatFits(constraintSize)
     self.textLabel.frame = CGRect(
-      x: self.textInsets.left,
+      x: 0,
       y: self.textInsets.top,
-      width: textLabelSize.width,
+      width: containerSize.width,
       height: textLabelSize.height
     )
     self.backgroundView.frame = CGRect(
       x: 0,
       y: 0,
-      width: self.textLabel.frame.size.width + self.textInsets.left + self.textInsets.right,
+      width: containerSize.width,
       height: self.textLabel.frame.size.height + self.textInsets.top + self.textInsets.bottom
     )
 
